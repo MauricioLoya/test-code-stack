@@ -30,4 +30,4 @@ npm install
 
 3. Access the application in your browser using the URL `http://localhost:8080`.
 
-4. On the home page, a table will be displayed with users fetched from the GoRest API.
+4. On the main page `/users`, a table will be displayed with users fetched from the GoRest API.
