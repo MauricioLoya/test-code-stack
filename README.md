@@ -26,7 +26,8 @@ npm install
 ## Usage
 
 1. Start the application locally:
+  ```npm run dev```
 
-2. Access the application in your browser using the URL `http://localhost:8080`.
+3. Access the application in your browser using the URL `http://localhost:8080`.
 
-3. On the home page, a table will be displayed with users fetched from the GoRest API.
+4. On the home page, a table will be displayed with users fetched from the GoRest API.
