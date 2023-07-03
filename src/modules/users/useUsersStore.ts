@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { Post, UserItem } from '../../types'
 import { ref } from 'vue'
 import axios from 'axios'
+import { API_URL } from '../../config/values'
 
 export const useUsersStore = defineStore('useUsersStore', () => {
   const users = ref<UserItem[]>([])
@@ -31,7 +32,7 @@ export const useUsersStore = defineStore('useUsersStore', () => {
     try {
       isFetchingUsers.value = true
       users.value = []
-      const response = await axios.get('https://gorest.co.in/public/v2/users', {
+      const response = await axios.get(`${API_URL}/users`, {
         params: {
           per_page: options.perPage ?? 10,
           page: options.page ?? 1,
@@ -41,7 +42,6 @@ export const useUsersStore = defineStore('useUsersStore', () => {
           gender: filterOptions?.gender
         }
       })
-      //8f5d3dac6a5bfdba716195beba0ed1ab2472ece7318c8462250f1a57a351fea6
       if (response.headers['x-pagination-total']) {
         metaData.value.paginationTotal = parseInt(
           response.headers['x-pagination-total']?.toString() ?? '0'
@@ -58,8 +58,8 @@ export const useUsersStore = defineStore('useUsersStore', () => {
   async function fetchUserById(id: number): Promise<UserItem | void> {
     try {
       const [userResponse, postsResponse] = await Promise.all([
-        axios.get(`https://gorest.co.in/public/v2/users/${id}`),
-        axios.get(`https://gorest.co.in/public/v2/users/${id}/posts`)
+        axios.get(`${API_URL}/users/${id}`),
+        axios.get(`${API_URL}/users/${id}/posts`)
       ])
       currentUser.value.user = userResponse.data
       currentUser.value.posts = postsResponse.data
