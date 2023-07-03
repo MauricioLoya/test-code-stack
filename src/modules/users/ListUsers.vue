@@ -33,7 +33,7 @@
         </th>
         <th scope="col" class="px-6 py-3 text-center">
           <div class="flex flex-col">
-            Gander
+            Gender
             <select
               v-model="filters.gender"
               @change="updateUserList"
