@@ -48,9 +48,11 @@
         <th scope="col" class="px-6 py-3 text-center">Action</th>
       </template>
       <template #cols="{ item }">
-        <th class="p-2">
-          <Avatar :name="item.name" />
-          {{ item.name }}
+        <th class="p-3">
+          <div class="flex items-center justify-start gap-2">
+            <Avatar :name="item.name" />
+            {{ item.name }}
+          </div>
         </th>
         <th class="p-2">
           <Text>
@@ -63,9 +65,14 @@
           </div>
         </th>
         <th class="p-2">
-          <div class="flex text-xs justify-center items-center uppercase">
-            <RouterLink :to="{ name: 'user-details', params: { id: item.id } }">
+          <div>
+            <RouterLink
+              class="flex text-xs justify-center items-center uppercase gap-2"
+              :to="{ name: 'user-details', params: { id: item.id } }"
+            >
               See details
+
+              <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
             </RouterLink>
           </div>
         </th>

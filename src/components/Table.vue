@@ -68,6 +68,8 @@ function onChangePage() {
             v-if="props?.rows?.length > 0"
             v-for="(row, index) in props.rows"
             :key="index"
+            class="border-b border-gray-50
+             dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
           >
             <slot name="cols" :item="row" :i="index" />
           </tr>
