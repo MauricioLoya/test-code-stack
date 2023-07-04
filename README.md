@@ -9,6 +9,15 @@ This is an example application developed using Vue 3 and TypeScript that consume
 - Implements a table with filters to view and search users.
 - Provides a details view to display additional information about a selected user.
 
+## Used Libraries
+
+- [Vue 3](https://vuejs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vue router](https://router.vuejs.org/)
+- [Pinia](https://pinia.vuejs.org/)
+- [axios](https://www.npmjs.com/package/axios)
+- [Tailwingcss](https://tailwindcss.com/)
+
 ## Setup
 
 1. Clone the application repository from GitHub:
